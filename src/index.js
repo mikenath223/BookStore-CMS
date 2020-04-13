@@ -1,35 +1,31 @@
 import React from 'react';
-import ReactDOM from 'react-dom'
-import App from './components/app'
-import { Provider, connect } from 'react-redux'
+import ReactDOM from 'react-dom';
+import { Provider, connect } from 'react-redux';
 import { createStore } from 'redux';
-import { CREATE_BOOK, REMOVE_BOOK } from './actions/index'
-import bookReducer from './reducers/book'
+import App from './components/app';
+import { CREATE_BOOK, REMOVE_BOOK } from './actions/index';
+import rootReducer from './reducers/index';
 
-const mapStateToProps = (state) => {
-  return {
-    books: state
-  }
-}
+const mapStateToProps = state => ({
+  books: state,
+});
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    addBook: (book) => {
-      dispatch(CREATE_BOOK(book))
-    },
-    removeBook: (book) => {
-      dispatch(REMOVE_BOOK(book))
-    }
-  }
-}
+const mapDispatchToProps = dispatch => ({
+  addBook: book => {
+    dispatch(CREATE_BOOK(book));
+  },
+  removeBook: book => {
+    dispatch(REMOVE_BOOK(book));
+  },
+});
 
 
-const store = createStore(bookReducer);
-
-const Container = connect(mapStateToProps, mapDispatchToProps)(App)
+const store = createStore(rootReducer);
+const Container = connect(mapStateToProps, mapDispatchToProps)(App);
 
 ReactDOM.render(
   <Provider store={store}>
     <Container />
   </Provider>,
-  document.getElementById('root'))
+  document.getElementById('root'),
+);

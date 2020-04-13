@@ -1,20 +1,38 @@
-import { ADD_BOOK, DEL_BOOK } from '../actions/index'
+import { ADD_BOOK, DEL_BOOK } from '../actions/index';
 
-const bookReducer = (state = [], action) => {
+const defaultState = [
+  {
+    bookId: Math.floor(Math.random() * 10),
+    title: 'First book',
+    category: 'Action',
+  },
+  {
+    bookId: Math.floor(Math.random() * 10),
+    title: 'Learning React',
+    category: 'Learning',
+  },
+  {
+    bookId: Math.floor(Math.random() * 10),
+    title: 'It chapter 2',
+    category: 'Horror',
+  },
+];
+
+const bookReducer = (state = defaultState, action) => {
   switch (action.type) {
     case ADD_BOOK:
       return [
         ...state,
-        action.book
-      ]
+        action.book,
+      ];
     case DEL_BOOK:
       return [
-        ...state
-      ].filter(bk => bk !== action.book)
+        ...state,
+      ].filter(bk => bk !== action.book);
     default:
       return state;
   }
-}
+};
 
 
 export default bookReducer;

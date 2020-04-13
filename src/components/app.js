@@ -1,17 +1,12 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import BooksList from '../containers/booksList'
-import BooksForm from '../containers/booksForm'
+import React from 'react';
+import BooksList from '../containers/booksList';
+import BooksForm from '../containers/booksForm';
 
-class App extends React.Component {
-  render() {
-    return (
-      <main>
-        <BooksForm />
-        <BooksList />
-      </main>
-    )
-  }
-}
+const App = () => (
+  <main>
+    <BooksForm />
+    <BooksList />
+  </main>
+);
 
-export default App
+export default App;
