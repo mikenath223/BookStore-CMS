@@ -5,11 +5,11 @@ import BooksForm from '../containers/booksForm'
 
 class App extends React.Component {
   render() {
-    return(
-      <div>
-        <BooksList />
+    return (
+      <main>
         <BooksForm />
-      </div>
+        <BooksList />
+      </main>
     )
   }
 }

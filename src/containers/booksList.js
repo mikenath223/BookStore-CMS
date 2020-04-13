@@ -1,4 +1,5 @@
 import React from 'react'
+import Book from '../components/book'
 
 class BooksList extends React.Component {
   render() {
@@ -13,29 +14,17 @@ class BooksList extends React.Component {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>John Lennon</td>
-              <td>Rhythm Guitar</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>Paul McCartney</td>
-              <td>Bass</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>George Harrison</td>
-              <td>Lead Guitar</td>
-              <td>Lead Guitar</td>
-            </tr>
-            <tr>
-              <td>Ringo Starr</td>
-              <td>Drums</td>
-              <td>Lead Guitar</td>
-            </tr>
+
+          <Book book={''}/>
+            <Book book={''}/>
+            <Book book={''}/>
+            <Book book={''}/>
+            <Book book={''}/>
           </tbody>
         </table>
       </div>
     )
   }
 }
+
+export default BooksList;
