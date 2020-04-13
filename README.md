@@ -4,6 +4,8 @@ A bookstore content management system built with react-redux package.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+Live Version: [https://librixx.herokuapp.com/]
+
 ## Available Scripts
 
 In the project directory, you can run:
