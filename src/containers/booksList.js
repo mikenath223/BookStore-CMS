@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import Book from '../components/book';
 import { CREATE_BOOK, REMOVE_BOOK } from '../actions/index';
 
@@ -17,9 +18,8 @@ const mapStateToProps = state => ({
   books: state,
 });
 
-const BooksList = (props) => {
-  const { books } = props.books
- 
+const BooksList = ({ books }) => {
+  const library = books.books;
   return (
     <div>
       <table>
@@ -31,11 +31,25 @@ const BooksList = (props) => {
           </tr>
         </thead>
         <tbody>
-          { books.map(book => <Book key={book.title} book={book} />) }
+          { library.map(book => <Book key={book.title} book={book} />) }
         </tbody>
       </table>
     </div>
   );
-}
+};
+
+BooksList.defaultProps = {
+  books: [
+    {
+      bookId: 1,
+      title: 'Learning Redux',
+      category: 'Learning',
+    },
+  ],
+};
+
+BooksList.propTypes = {
+  books: PropTypes.objectOf(PropTypes.array),
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(BooksList);
