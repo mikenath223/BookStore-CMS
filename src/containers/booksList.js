@@ -1,5 +1,16 @@
 import React from 'react';
 import Book from '../components/book';
+import { CREATE_BOOK, REMOVE_BOOK } from '../actions/index';
+
+const mapDispatchToProps = dispatch => ({
+  addBook: book => {
+    dispatch(CREATE_BOOK(book));
+  },
+  removeBook: book => {
+    dispatch(REMOVE_BOOK(book));
+  },
+});
+
 
 const BooksList = () => (
   <div>
@@ -23,4 +34,4 @@ const BooksList = () => (
   </div>
 );
 
-export default BooksList;
+export { BooksList, mapDispatchToProps };

@@ -1,15 +1,15 @@
 import React from 'react';
-import BooksList from '../containers/booksList';
+import { BooksList } from '../containers/booksList';
 import BooksForm from '../containers/booksForm';
 
 const App = () => (
-  <main>
+  <div>
     <nav>
       <h4>LibTriXx</h4>
     </nav>
     <BooksForm />
     <BooksList />
-  </main>
+  </div>
 );
 
 export default App;
