@@ -8,7 +8,7 @@ const CREATE_BOOK = book => ({
 
 const REMOVE_BOOK = book => ({
   type: DEL_BOOK,
-  book,
+  id: book.id,
 });
 
 export {
