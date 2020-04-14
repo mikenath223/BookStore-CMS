@@ -27,7 +27,7 @@ const defaultState = [
 
 
 const store = createStore(rootReducer, {
-  books: defaultState
+  books: defaultState,
 });
 
 
