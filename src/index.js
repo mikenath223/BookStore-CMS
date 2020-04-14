@@ -26,7 +26,9 @@ const defaultState = [
 ];
 
 
-const store = createStore(rootReducer);
+const store = createStore(rootReducer, {
+  books: defaultState
+});
 
 
 ReactDOM.render(

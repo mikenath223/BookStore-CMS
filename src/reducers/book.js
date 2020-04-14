@@ -1,7 +1,7 @@
 import { ADD_BOOK, DEL_BOOK } from '../actions/index';
 
 
-const bookReducer = (state = null, action) => {
+const bookReducer = (state = [], action) => {
   switch (action.type) {
     case ADD_BOOK:
       return [
