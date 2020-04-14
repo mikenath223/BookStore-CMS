@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import Book from '../components/book';
 import { CREATE_BOOK, REMOVE_BOOK } from '../actions/index';
 
@@ -11,6 +12,11 @@ const mapDispatchToProps = dispatch => ({
   },
 });
 
+const mapStateToProps = state => ({
+  books: state,
+});
+
+connect(mapStateToProps, mapDispatchToProps)(App);
 
 const BooksList = () => (
   <div>

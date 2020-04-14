@@ -1,9 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Provider, connect } from 'react-redux';
+import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import App from './components/app';
-import { mapDispatchToProps } from './containers/booksList';
 import rootReducer from './reducers/index';
 
 
@@ -26,12 +25,8 @@ const defaultState = [
   },
 ];
 
-const mapStateToProps = (state = defaultState) => ({
-  books: state,
-});
 
 const store = createStore(rootReducer);
-connect(mapStateToProps, mapDispatchToProps)(App);
 
 
 ReactDOM.render(
