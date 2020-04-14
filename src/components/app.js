@@ -4,6 +4,9 @@ import BooksForm from '../containers/booksForm';
 
 const App = () => (
   <main>
+    <nav>
+      <h4>LibTriXx</h4>
+    </nav>
     <BooksForm />
     <BooksList />
   </main>

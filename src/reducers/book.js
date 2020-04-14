@@ -1,18 +1,19 @@
 import { ADD_BOOK, DEL_BOOK } from '../actions/index';
 
+const randId = () => Math.floor(Math.random() * 1000);
 const defaultState = [
   {
-    bookId: Math.floor(Math.random() * 10),
+    bookId: randId(),
     title: 'First book',
     category: 'Action',
   },
   {
-    bookId: Math.floor(Math.random() * 10),
+    bookId: randId(),
     title: 'Learning React',
     category: 'Learning',
   },
   {
-    bookId: Math.floor(Math.random() * 10),
+    bookId: randId(),
     title: 'It chapter 2',
     category: 'Horror',
   },
