@@ -7,7 +7,7 @@ const BookForm = () => {
       <fieldset className="form-field">
         <label htmlFor="title">
           Book Title
-          <input type="text" name="title" id="title" className="input-title"/>
+          <input type="text" name="title" id="title" className="input-title" />
         </label>
 
       </fieldset>
