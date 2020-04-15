@@ -42,15 +42,15 @@ class BooksList extends React.Component {
             </tr>
           </thead>
           <tbody>
-            { library.map(book => (
+            {library.map(book => (
               <Book
                 key={book.title}
                 book={
-              book
-}
+                  book
+                }
                 onClick={this.handleRemoveBook}
               />
-            )) }
+            ))}
           </tbody>
         </table>
       </div>
