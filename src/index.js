@@ -1,16 +1,39 @@
 import React from 'react';
-import ReactDOM from 'react-dom'
-
-class App extends React.Component {
-
-  render() {
-    return (
-      <div>
-        <h1>Hello World!</h1>
-      </div>
-    )
-  }
-}
+import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+import App from './components/app';
+import rootReducer from './reducers/index';
 
 
-ReactDOM.render(<App/>, document.getElementById('root'))
+const randId = () => Math.floor(Math.random() * 1000);
+const defaultState = [
+  {
+    bookId: randId(),
+    title: 'First book',
+    category: 'Action',
+  },
+  {
+    bookId: randId(),
+    title: 'Learning React',
+    category: 'Learning',
+  },
+  {
+    bookId: randId(),
+    title: 'It chapter 2',
+    category: 'Horror',
+  },
+];
+
+
+const store = createStore(rootReducer, {
+  books: defaultState,
+});
+
+
+ReactDOM.render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById('root'),
+);
