@@ -15,19 +15,20 @@ const mapStateToProps = state => ({
   books: state,
 });
 
-class BooksList extends React.Component{
-  constructor(props){
-    super(props)
-    
-    this.handleRemoveBook = this.handleRemoveBook.bind(this)
-  }
-  
-  handleRemoveBook(book) {
-    this.props.removeBook(book)
+class BooksList extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.handleRemoveBook = this.handleRemoveBook.bind(this);
   }
 
-  render(){
-    const {books, removeBook} = this.props
+  handleRemoveBook(book) {
+    const { removeBook } = this.props;
+    removeBook(book);
+  }
+
+  render() {
+    const { books } = this.props;
     const library = books.books;
     return (
       <div>
@@ -41,12 +42,20 @@ class BooksList extends React.Component{
             </tr>
           </thead>
           <tbody>
-            { library.map(book => <Book key={book.title} book={book} onClick={this.handleRemoveBook} />) }
+            { library.map(book => (
+              <Book
+                key={book.title}
+                book={
+              book
+}
+                onClick={this.handleRemoveBook}
+              />
+            )) }
           </tbody>
         </table>
       </div>
     );
-  };
+  }
 }
 
 BooksList.defaultProps = {
@@ -61,6 +70,7 @@ BooksList.defaultProps = {
 
 BooksList.propTypes = {
   books: PropTypes.objectOf(PropTypes.array),
+  removeBook: PropTypes.func.isRequired,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(BooksList);

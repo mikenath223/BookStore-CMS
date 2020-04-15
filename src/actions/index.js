@@ -8,15 +8,15 @@ const CREATE_BOOK = book => ({
   book: {
     bookId: randId(),
     title: book.title,
-    category: book.category
+    category: book.category,
   },
 });
 
 const REMOVE_BOOK = book => ({
   type: DEL_BOOK,
-  book
+  book,
 });
 
 export {
-  CREATE_BOOK, REMOVE_BOOK, ADD_BOOK, DEL_BOOK, randId
+  CREATE_BOOK, REMOVE_BOOK, ADD_BOOK, DEL_BOOK, randId,
 };
