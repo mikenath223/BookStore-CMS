@@ -3,6 +3,8 @@ const randId = () => Math.floor(Math.random() * 1000);
 
 const ADD_BOOK = 'addBook';
 const DEL_BOOK = 'delBook';
+const FILTER_BOOK = 'filterBook';
+
 const CREATE_BOOK = book => ({
   type: ADD_BOOK,
   book: {
@@ -17,6 +19,11 @@ const REMOVE_BOOK = book => ({
   book,
 });
 
+const CHANGE_FILTER = category => ({
+  type: FILTER_BOOK,
+  category
+})
+
 export {
-  CREATE_BOOK, REMOVE_BOOK, ADD_BOOK, DEL_BOOK, randId,
+  CREATE_BOOK, REMOVE_BOOK, CHANGE_FILTER, ADD_BOOK, DEL_BOOK, FILTER_BOOK, randId,
 };
