@@ -2,13 +2,10 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Book from '../components/book';
-import { CREATE_BOOK, REMOVE_BOOK } from '../actions/index';
+import { REMOVE_BOOK } from '../actions/index';
 
 // container component
 const mapDispatchToProps = dispatch => ({
-  addBook: book => {
-    dispatch(CREATE_BOOK(book));
-  },
   removeBook: book => {
     dispatch(REMOVE_BOOK(book));
   },
