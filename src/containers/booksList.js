@@ -40,7 +40,7 @@ class BooksList extends React.Component {
 
   filterBooks() {
     const { books, filter } = this.props;
-    if (filter.filter !== 'ALL') {
+    if (filter.filter !== '') {
       return [...books].filter(book => book.category === filter.filter);
     }
     return books;
