@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap');
+body {
+  font-family: 'Roboto Slab', Monserrat;
+  font-size: 16px;
+  color: #121212;
+}
+
+.submit-button {
+  background-color: #0290ff;
+  border: none;
+  color: #fff;
+  border-radius: 3px;
+  width: 184px;
+  height: 45px;
+  font-family: 'Roboto Slab';
+  font-size: 13px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 0.5px;
+  text-align: center;
+  text-transform: uppercase;
+}
