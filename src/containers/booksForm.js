@@ -49,29 +49,27 @@ class BookForm extends React.Component {
     const bookCategories = ['Biography', 'History', 'Horror', 'Kids', 'Learning', 'Sci-Fi'];
     const { category, title } = this.state;
     return (
-      <form onSubmit={this.handleSubmit.bind(this)}>
-        <fieldset className="form-field">
-          <label htmlFor="title">
-            Book Title
-            <input type="text" value={title} name="title" id="title" onChange={e => this.handleChange(e, 'title')} className="input-title" required />
-          </label>
-
-        </fieldset>
-        <fieldset>
-          <label htmlFor="category">
-            Book Category
-            <select name="category" value={category} className="select-field" onChange={e => this.handleChange(e, 'category')} required>
-              <option value="">Select</option>
+      <div className="container-fluid">
+        <h3>Add new book</h3>
+        <form onSubmit={this.handleSubmit.bind(this)} className="d-flex row">
+        
+          <fieldset className="form-group col-6">
+            <input type="text" value={title} className="form-control" name="title" id="title" onChange={e => this.handleChange(e, 'title')} required />
+          </fieldset>
+          <fieldset className="form-group col-4">
+            <select name="category" value={category} className="form-control select-field" onChange={e => this.handleChange(e, 'category')} required>
+              <option value="">Category</option>
               {bookCategories.map(cat => (
                 <option key={cat} value={cat}>
                   {cat}
                 </option>
               ))}
             </select>
-          </label>
-        </fieldset>
-        <button type="submit">Add Book</button>
-      </form>
+          
+          </fieldset>
+          <button type="submit" className="col-2 submit-button">Add Book</button>
+        </form>
+      </div>
     );
   }
 }
