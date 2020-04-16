@@ -5,10 +5,10 @@ const CategoryFilter = props => {
   const bookCategories = ['Action', 'Biography', 'History', 'Horror', 'Kids', 'Learning', 'Sci-Fi'];
   const { onClick } = props;
   return (
-    <div>
+    <div className="form-group">
       <label htmlFor="category">
-        Select Book Category
-        <select name="category" className="select-field" onChange={e => onClick(e)}>
+        <h5  className="">Select Book Category</h5>
+        <select name="category" className="select-field form-control" onChange={e => onClick(e)}>
           <option value="">All</option>
           {bookCategories.map(cat => (
             <option key={cat} value={cat}>

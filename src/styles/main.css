@@ -22,3 +22,17 @@ body {
   text-align: center;
   text-transform: uppercase;
 }
+
+.main-container {
+  height: 100vh;
+}
+
+.logo {
+  font-family: Montserrat;
+  font-size: 30px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  letter-spacing: normal;
+  color: #0290ff;
+}
