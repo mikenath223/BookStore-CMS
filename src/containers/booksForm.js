@@ -53,7 +53,7 @@ class BookForm extends React.Component {
         <fieldset className="form-field">
           <label htmlFor="title">
             Book Title
-            <input type="text" value={title} name="title" id="title" onChange={e => this.handleChange(e, 'title')} className="input-title" required/>
+            <input type="text" value={title} name="title" id="title" onChange={e => this.handleChange(e, 'title')} className="input-title" required />
           </label>
 
         </fieldset>
