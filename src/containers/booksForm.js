@@ -46,21 +46,22 @@ class BookForm extends React.Component {
   }
 
   render() {
-    const bookCategories = ['Action', 'Biography', 'History', 'Horror', 'Kids', 'Learning', 'Sci-Fi'];
+    const bookCategories = ['Biography', 'History', 'Horror', 'Kids', 'Learning', 'Sci-Fi'];
     const { category, title } = this.state;
     return (
-      <form>
+      <form onSubmit={this.handleSubmit.bind(this)}>
         <fieldset className="form-field">
           <label htmlFor="title">
             Book Title
-            <input type="text" value={title} name="title" id="title" onChange={e => this.handleChange(e, 'title')} className="input-title" />
+            <input type="text" value={title} name="title" id="title" onChange={e => this.handleChange(e, 'title')} className="input-title" required/>
           </label>
 
         </fieldset>
         <fieldset>
           <label htmlFor="category">
             Book Category
-            <select name="category" value={category} className="select-field" onChange={e => this.handleChange(e, 'category')}>
+            <select name="category" value={category} className="select-field" onChange={e => this.handleChange(e, 'category')} required>
+              <option value="">Select</option>
               {bookCategories.map(cat => (
                 <option key={cat} value={cat}>
                   {cat}
@@ -69,7 +70,7 @@ class BookForm extends React.Component {
             </select>
           </label>
         </fieldset>
-        <button type="submit" onClick={this.handleSubmit.bind(this)}>Add Book</button>
+        <button type="submit">Add Book</button>
       </form>
     );
   }
