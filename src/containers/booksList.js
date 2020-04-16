@@ -16,8 +16,8 @@ const mapDispatchToProps = dispatch => ({
 });
 
 const mapStateToProps = (state) => ({
-  books: state,
-  filter: state
+  books: state['books'],
+  filter: state['filter']
 });
 
 class BooksList extends React.Component {
@@ -38,10 +38,16 @@ class BooksList extends React.Component {
     filter_book(e.target.value)
   }
   
+  filterBooks() {
+    const { books, filter } = this.props
+    if(filter.filter != 'ALL'){
+      return [...books].filter(book => book.category === filter.filter)
+    }
+    return books
+  }
 
   render() {
-    const { books } = this.props;
-    const library = books.books;
+    const library = this.filterBooks();
     return (
       <div>
       <CategoryFilter onClick={this.handleFilterChange}/>
