@@ -1,9 +1,9 @@
 import { FILTER_BOOK } from '../actions';
 
-const filterCategory = (state = [], action) => {
+const filterCategory = (state = '', action) => {
   switch (action.type) {
     case FILTER_BOOK:
-      return { ...state, filter: action.category };
+      return action.category;
     default:
       return state;
   }

@@ -5,7 +5,6 @@ import Book from '../components/book';
 import { REMOVE_BOOK, CHANGE_FILTER } from '../actions/index';
 import CategoryFilter from './category_filter';
 
-// container component
 const mapDispatchToProps = dispatch => ({
   removeBook: book => {
     dispatch(REMOVE_BOOK(book));
@@ -40,8 +39,8 @@ class BooksList extends React.Component {
 
   filterBooks() {
     const { books, filter } = this.props;
-    if (filter.filter !== '') {
-      return [...books].filter(book => book.category === filter.filter);
+    if (filter !== '') {
+      return [...books].filter(book => book.category === filter);
     }
     return books;
   }
@@ -85,12 +84,12 @@ BooksList.defaultProps = {
       category: 'Learning',
     },
   ],
-  filter: { filter: '' },
+  filter: '',
 };
 
 BooksList.propTypes = {
   books: PropTypes.arrayOf(PropTypes.object),
-  filter: PropTypes.objectOf(PropTypes.string),
+  filter: PropTypes.string,
   removeBook: PropTypes.func.isRequired,
   filterBook: PropTypes.func.isRequired,
 };
