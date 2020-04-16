@@ -1,12 +1,12 @@
-import { FILTER_BOOK } from "../actions";
+import { FILTER_BOOK } from '../actions';
 
 const filterCategory = (state = [], action) => {
   switch (action.type) {
     case FILTER_BOOK:
-      return Object.assign({}, state, { filter: action.category })
+      return { ...state, filter: action.category };
     default:
-      return state
+      return state;
   }
-}
+};
 
-export default filterCategory
+export default filterCategory;

@@ -21,8 +21,8 @@ const REMOVE_BOOK = book => ({
 
 const CHANGE_FILTER = category => ({
   type: FILTER_BOOK,
-  category
-})
+  category,
+});
 
 export {
   CREATE_BOOK, REMOVE_BOOK, CHANGE_FILTER, ADD_BOOK, DEL_BOOK, FILTER_BOOK, randId,

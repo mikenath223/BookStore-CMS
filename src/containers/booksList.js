@@ -3,21 +3,21 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Book from '../components/book';
 import { REMOVE_BOOK, CHANGE_FILTER } from '../actions/index';
-import CategoryFilter from './category_filter'
+import CategoryFilter from './category_filter';
 
 // container component
 const mapDispatchToProps = dispatch => ({
   removeBook: book => {
     dispatch(REMOVE_BOOK(book));
   },
-  filter_book: category => {
-    dispatch(CHANGE_FILTER(category))
-  }
+  filterBook: category => {
+    dispatch(CHANGE_FILTER(category));
+  },
 });
 
-const mapStateToProps = (state) => ({
-  books: state['books'],
-  filter: state['filter']
+const mapStateToProps = state => ({
+  books: state.books,
+  filter: state.filter,
 });
 
 class BooksList extends React.Component {
@@ -34,23 +34,23 @@ class BooksList extends React.Component {
   }
 
   handleFilterChange(e) {
-    const { filter_book } = this.props;
-    filter_book(e.target.value)
+    const { filterBook } = this.props;
+    filterBook(e.target.value);
   }
-  
+
   filterBooks() {
-    const { books, filter } = this.props
-    if(filter.filter != 'ALL'){
-      return [...books].filter(book => book.category === filter.filter)
+    const { books, filter } = this.props;
+    if (filter.filter !== 'ALL') {
+      return [...books].filter(book => book.category === filter.filter);
     }
-    return books
+    return books;
   }
 
   render() {
     const library = this.filterBooks();
     return (
       <div>
-      <CategoryFilter onClick={this.handleFilterChange}/>
+        <CategoryFilter onClick={this.handleFilterChange} />
         <table>
           <thead>
             <tr>
@@ -85,12 +85,14 @@ BooksList.defaultProps = {
       category: 'Learning',
     },
   ],
+  filter: { filter: '' },
 };
 
 BooksList.propTypes = {
-  // books: PropTypes.objectOf(PropTypes.array),
+  books: PropTypes.arrayOf(PropTypes.object),
+  filter: PropTypes.objectOf(PropTypes.string),
   removeBook: PropTypes.func.isRequired,
-  filter_book: PropTypes.func.isRequired
+  filterBook: PropTypes.func.isRequired,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(BooksList);
