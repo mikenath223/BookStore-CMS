@@ -3,12 +3,12 @@ import BooksList from '../containers/booksList';
 import BookForm from '../containers/booksForm';
 
 const App = () => (
-  <div>
+  <div className="container">
     <nav>
       <h4>LibTriXx</h4>
     </nav>
-    <BookForm />
     <BooksList />
+    <BookForm />
   </div>
 );
 
