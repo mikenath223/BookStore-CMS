@@ -144,6 +144,10 @@ label {
   background: #1a9afcfb;
 }
 
+.book-head, label {
+  font-size: 29px;
+}
+
 @media (max-width: 430px) {
   .book-temp {
     height: 280px;
