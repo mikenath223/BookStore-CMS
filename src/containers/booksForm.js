@@ -49,7 +49,7 @@ class BookForm extends React.Component {
     const bookCategories = ['Biography', 'History', 'Horror', 'Kids', 'Learning', 'Sci-Fi'];
     const { category, title } = this.state;
     return (
-      <div className="container-fluid">
+      <div className="container-fluid mt-3">
         <h3>Add new book</h3>
         <form onSubmit={this.handleSubmit.bind(this)} className="d-flex row">
         

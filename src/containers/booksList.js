@@ -48,18 +48,10 @@ class BooksList extends React.Component {
   render() {
     const library = this.filterBooks();
     return (
-      <div>
+      <div className="container-fluid book-table">
         <CategoryFilter onClick={this.handleFilterChange} />
-        <table>
-          <thead>
-            <tr>
-              <th>Book ID</th>
-              <th>Title</th>
-              <th>Category</th>
-              <th>Delete</th>
-            </tr>
-          </thead>
-          <tbody>
+        <table className="row">
+          <tbody className="container-fluid">
             {library.map(book => (
               <Book
                 key={book.title}

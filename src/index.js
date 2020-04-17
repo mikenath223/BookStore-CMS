@@ -12,7 +12,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 const defaultState = [
   {
     bookId: randId(),
-    title: 'First book',
+    title: 'Little Fires Everywhere',
     category: 'Action',
   },
   {
