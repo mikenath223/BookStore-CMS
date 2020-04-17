@@ -7,9 +7,9 @@ const CategoryFilter = props => {
   return (
     <div className="form-group mt-5">
       <label htmlFor="category">
-        <h5 className="label">Select Book Category</h5>
-        <select name="category" className="select-field form-control" onChange={e => onClick(e)}>
-          <option value="">All</option>
+        Select Book Category
+        <select name="category" className="select-field" onChange={e => onClick(e)}>
+          <option value="All">All</option>
           {bookCategories.map(cat => (
             <option key={cat} value={cat}>
               {cat}
