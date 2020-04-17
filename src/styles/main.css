@@ -144,7 +144,7 @@ label {
   background: #1a9afcfb;
 }
 
-.book-head, label {
+.book-head, .label {
   font-size: 29px;
 }
 

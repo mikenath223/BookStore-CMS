@@ -50,7 +50,7 @@ class BookForm extends React.Component {
     const { category, title } = this.state;
     return (
       <div className="container-fluid my-3">
-        <h3>Add new book</h3>
+        <h3 className="label">Add new book</h3>
         <form onSubmit={this.handleSubmit.bind(this)} className="d-flex row justify-content-center">
 
           <fieldset className="form-group col-xl-4 col-lg-4 col-md-6 col-sm-9">
