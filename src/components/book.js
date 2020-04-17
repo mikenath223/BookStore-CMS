@@ -7,25 +7,44 @@ const Book = ({ book, onClick }) => {
   const getPercent = randPercent();
   return (
     <tr className="row mb-4 book-temp">
-      <td className="col-4 "> <div className="book-element"> { category } <h3 className="book-head">{ 
-        title }</h3> Book ID { bookId }</div> </td>
+      <td className="col-4 ">
+        {' '}
+        <div className="book-element">
+          {' '}
+          { category }
+          {' '}
+          <h3 className="book-head">
+            {
+        title
+}
+          </h3>
+          {' '}
+          Book ID
+          {' '}
+          { bookId }
+        </div>
+        {' '}
+
+      </td>
       <td className="col-4 d-flex justify-content-center align-items-center">
-      <div className="single-chart">
-    <svg viewBox="0 0 36 36" className="circular-chart blue">
-      <path className="circle-bg"
-        d="M18 2.0845
+        <div className="single-chart">
+          <svg viewBox="0 0 36 36" className="circular-chart blue">
+            <path
+              className="circle-bg"
+              d="M18 2.0845
           a 15.9155 15.9155 0 0 1 0 31.831
           a 15.9155 15.9155 0 0 1 0 -31.831"
-      />
-      <path className="circle"
-        strokeDasharray={getPercent+", 100"}
-        d="M18 2.0845
+            />
+            <path
+              className="circle"
+              strokeDasharray={`${getPercent}, 100`}
+              d="M18 2.0845
           a 15.9155 15.9155 0 0 1 0 31.831
           a 15.9155 15.9155 0 0 1 0 -31.831"
-      />
-      <text x="18" y="20.35" className="percentage">{getPercent+'%'}</text>
-    </svg>
-  </div>
+            />
+            <text x="18" y="20.35" className="percentage">{`${getPercent}%`}</text>
+          </svg>
+        </div>
       </td>
 
       <td className="col-4 d-flex justify-content-center align-items-center">

@@ -52,7 +52,7 @@ class BookForm extends React.Component {
       <div className="container-fluid mt-3">
         <h3>Add new book</h3>
         <form onSubmit={this.handleSubmit.bind(this)} className="d-flex row">
-        
+
           <fieldset className="form-group col-6">
             <input type="text" value={title} className="form-control" name="title" id="title" onChange={e => this.handleChange(e, 'title')} required />
           </fieldset>
@@ -65,7 +65,7 @@ class BookForm extends React.Component {
                 </option>
               ))}
             </select>
-          
+
           </fieldset>
           <button type="submit" className="col-2 submit-button">Add Book</button>
         </form>

@@ -5,7 +5,7 @@ import { createStore } from 'redux';
 import App from './components/app';
 import rootReducer from './reducers/index';
 import { randId } from './actions/index';
-import './styles/reset.css'
+import './styles/reset.css';
 import './styles/main.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
