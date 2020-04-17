@@ -7,7 +7,7 @@ const Book = ({ book, onClick }) => {
   const getPercent = randPercent();
   return (
     <tr className="row mb-4 book-temp">
-      <td className="col-4 ">
+      <td className="col-xl-4 col-lg-4 col-md-6 col-sm-9">
         {' '}
         <div className="book-element">
           {' '}
@@ -26,7 +26,7 @@ const Book = ({ book, onClick }) => {
         {' '}
 
       </td>
-      <td className="col-4 d-flex justify-content-center align-items-center">
+      <td className="col-xl-4 col-lg-4 col-md-3 col-sm-9 d-flex justify-content-center align-items-center">
         <div className="single-chart">
           <svg viewBox="0 0 36 36" className="circular-chart blue">
             <path
@@ -47,7 +47,7 @@ const Book = ({ book, onClick }) => {
         </div>
       </td>
 
-      <td className="col-4 d-flex justify-content-center align-items-center">
+      <td className="col-xl-4 col-lg-4 col-md-3 col-sm-9 d-flex justify-content-center align-items-center">
         <button type="button" className="del-button" onClick={() => onClick(book)}>Remove Book</button>
       </td>
     </tr>

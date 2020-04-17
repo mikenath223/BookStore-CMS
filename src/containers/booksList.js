@@ -48,7 +48,7 @@ class BooksList extends React.Component {
   render() {
     const library = this.filterBooks();
     return (
-      <div className="container-fluid book-table">
+      <div className="container-fluid book-table mt-5">
         <CategoryFilter onClick={this.handleFilterChange} />
         <table className="row">
           <tbody className="container-fluid">
