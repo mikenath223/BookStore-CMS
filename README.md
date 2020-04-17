@@ -46,7 +46,7 @@ Fork this repo and submit a PR for review and potential merge to main branch. Fe
 👨‍💻 **Michgolden Ukeje**
 
 - Github: [@mikenath223](https://github.com/mikenath223)
-
+- LinkedIn: [@mikenath223](https://www.linkedin.com/in/michgoldenukeje/)
 
 
 ## License
