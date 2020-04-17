@@ -49,29 +49,27 @@ class BookForm extends React.Component {
     const bookCategories = ['Biography', 'History', 'Horror', 'Kids', 'Learning', 'Sci-Fi'];
     const { category, title } = this.state;
     return (
-      <form onSubmit={this.handleSubmit.bind(this)}>
-        <fieldset className="form-field">
-          <label htmlFor="title">
-            Book Title
-            <input type="text" value={title} name="title" id="title" onChange={e => this.handleChange(e, 'title')} className="input-title" required />
-          </label>
+      <div className="container-fluid my-3">
+        <h3 className="label">Add new book</h3>
+        <form onSubmit={this.handleSubmit.bind(this)} className="d-flex row justify-content-center">
 
-        </fieldset>
-        <fieldset>
-          <label htmlFor="category">
-            Book Category
-            <select name="category" value={category} className="select-field" onChange={e => this.handleChange(e, 'category')} required>
-              <option value="">Select</option>
+          <fieldset className="form-group col-xl-4 col-lg-4 col-md-6 col-sm-9">
+            <input type="text" placeholder="Book title" value={title} className="form-control" name="title" id="title" onChange={e => this.handleChange(e, 'title')} required />
+          </fieldset>
+          <fieldset className="form-group col-xl-4 col-lg-4 col-md-6 col-sm-9">
+            <select name="category" value={category} className="form-control select-field" onChange={e => this.handleChange(e, 'category')} required>
+              <option value="">Category</option>
               {bookCategories.map(cat => (
                 <option key={cat} value={cat}>
                   {cat}
                 </option>
               ))}
             </select>
-          </label>
-        </fieldset>
-        <button type="submit">Add Book</button>
-      </form>
+
+          </fieldset>
+          <button type="submit" className="col-xl-4 col-lg-4 col-md-6 col-sm-9 submit-button">Add Book</button>
+        </form>
+      </div>
     );
   }
 }
