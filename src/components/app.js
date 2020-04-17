@@ -5,7 +5,7 @@ import avatar from '../styles/icons8-user-30.png'
 
 const App = () => (
   <div className="container main-container">
-    <nav className="row mt-3">
+    <nav className="row pt-3 bg-white head-elem">
       <ul className="nav col-6">
         <li className="nav-item">
           <a className="nav-link active logo mt-2" href="#"><h2>LibTrixx CMS</h2></a>
@@ -18,7 +18,7 @@ const App = () => (
         </li>
       </ul>
       <div className="col-6 pt-2">
-        <img src={avatar} className="mt-3 float-right"/>
+        <img src={avatar} className="mt-2 float-right avatar"/>
       </div>
     </nav>
     <BooksList />
