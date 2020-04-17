@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Book from '../components/book';
 import { REMOVE_BOOK, CHANGE_FILTER } from '../actions/index';
-import CategoryFilter from './category_filter';
+import CategoryFilter from '../components/category_filter';
 
 const mapDispatchToProps = dispatch => ({
   removeBook: book => {
@@ -39,7 +39,7 @@ class BooksList extends React.Component {
 
   filterBooks() {
     const { books, filter } = this.props;
-    if (filter !== '') {
+    if (filter !== 'All') {
       return [...books].filter(book => book.category === filter);
     }
     return books;
@@ -84,7 +84,7 @@ BooksList.defaultProps = {
       category: 'Learning',
     },
   ],
-  filter: '',
+  filter: 'All',
 };
 
 BooksList.propTypes = {
