@@ -2,17 +2,21 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Book from '../components/book';
-import { REMOVE_BOOK } from '../actions/index';
+import { REMOVE_BOOK, CHANGE_FILTER } from '../actions/index';
+import CategoryFilter from '../components/category_filter';
 
-// container component
 const mapDispatchToProps = dispatch => ({
   removeBook: book => {
     dispatch(REMOVE_BOOK(book));
   },
+  filterBook: category => {
+    dispatch(CHANGE_FILTER(category));
+  },
 });
 
 const mapStateToProps = state => ({
-  books: state,
+  books: state.books,
+  filter: state.filter,
 });
 
 class BooksList extends React.Component {
@@ -20,6 +24,7 @@ class BooksList extends React.Component {
     super(props);
 
     this.handleRemoveBook = this.handleRemoveBook.bind(this);
+    this.handleFilterChange = this.handleFilterChange.bind(this);
   }
 
   handleRemoveBook(book) {
@@ -27,11 +32,24 @@ class BooksList extends React.Component {
     removeBook(book);
   }
 
+  handleFilterChange(e) {
+    const { filterBook } = this.props;
+    filterBook(e.target.value);
+  }
+
+  filterBooks() {
+    const { books, filter } = this.props;
+    if (filter !== 'All') {
+      return [...books].filter(book => book.category === filter);
+    }
+    return books;
+  }
+
   render() {
-    const { books } = this.props;
-    const library = books.books;
+    const library = this.filterBooks();
     return (
       <div>
+        <CategoryFilter onClick={this.handleFilterChange} />
         <table>
           <thead>
             <tr>
@@ -42,15 +60,15 @@ class BooksList extends React.Component {
             </tr>
           </thead>
           <tbody>
-            { library.map(book => (
+            {library.map(book => (
               <Book
                 key={book.title}
                 book={
-              book
-}
+                  book
+                }
                 onClick={this.handleRemoveBook}
               />
-            )) }
+            ))}
           </tbody>
         </table>
       </div>
@@ -66,11 +84,14 @@ BooksList.defaultProps = {
       category: 'Learning',
     },
   ],
+  filter: 'All',
 };
 
 BooksList.propTypes = {
-  books: PropTypes.objectOf(PropTypes.array),
+  books: PropTypes.arrayOf(PropTypes.object),
+  filter: PropTypes.string,
   removeBook: PropTypes.func.isRequired,
+  filterBook: PropTypes.func.isRequired,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(BooksList);
