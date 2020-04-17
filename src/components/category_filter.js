@@ -9,7 +9,7 @@ const CategoryFilter = props => {
       <label htmlFor="category">
         Select Book Category
         <select name="category" className="select-field" onChange={e => onClick(e)}>
-          <option value="">All</option>
+          <option value="All">All</option>
           {bookCategories.map(cat => (
             <option key={cat} value={cat}>
               {cat}
