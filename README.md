@@ -10,7 +10,8 @@ Live Version: [https://librixx.herokuapp.com/]
 
 - JavaScript ECMA6
 - React ^16.13.1
-- CSS3
+- CSS
+- Bootstrap
 - Redux 4.0.5
 
 To get a local copy up and running follow these simple example steps.
